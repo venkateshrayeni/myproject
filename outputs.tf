@@ -30,3 +30,10 @@ output "hello_world_service_ip" {
   value = kubernetes_service.hello_world.load_balancer_ingress[0].ip
 }
 */
+output "sql_server_name" {
+  value = module.sql.sql_server_name
+}
+
+output "sql_database_connection_string" {
+  value = module.sql.sql_database_connection_string
+}

@@ -1,7 +1,7 @@
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = "myaks"
-  location            = var.location
   resource_group_name = var.resource_group_name
+  location            = var.location
   dns_prefix          = "aks1"
 
   default_node_pool {
@@ -17,4 +17,24 @@ resource "azurerm_kubernetes_cluster" "aks" {
   tags = {
     Environment = "poc"
   }
+}
+
+resource "azurerm_container_registry" "acr" {
+  name                = "mypocacr379"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  sku                 = "Basic"
+  admin_enabled       = false
+  /*
+  georeplications {
+    location                = "East US"
+    zone_redundancy_enabled = false
+    tags                    = {}
+  }
+  georeplications {
+    location                = "North Europe"
+    zone_redundancy_enabled = true
+    tags                    = {}
+  }
+  */
 }

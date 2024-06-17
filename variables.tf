@@ -43,9 +43,30 @@ variable "ssh_public_key_path" {
   description = "The path to the SSH public key"
   type        = string
 }
+
 /*
 variable "storage_account_name" {
   description = "storage account name"
   type        = string
 }
 */
+
+variable "sql_server_name" {
+  description = "Name of the SQL Server"
+  type        = string
+}
+
+variable "sql_database_name" {
+  description = "Name of the SQL Database"
+  type        = string
+}
+
+variable "sql_admin_username" {
+  description = "Administrator username for the SQL Server"
+  type        = string
+}
+
+variable "sql_admin_password" {
+  description = "Administrator password for the SQL Server"
+  type        = string
+}
